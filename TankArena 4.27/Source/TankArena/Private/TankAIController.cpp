@@ -7,7 +7,7 @@
 #include "TankArena.h"
 
 void ATankAIController::BeginPlay() {
-	Super::BeginPlay();
+	Super::BeginPlay(); 
 }
 
 
@@ -21,7 +21,7 @@ void ATankAIController::Tick(float DeltaTime)
 
 	if (PlayerTank) {
 
-		// Move towards the player
+		// Move towards the player		
 		MoveToActor(PlayerTank, AcceptanceRadius); 
 		// Random Vector with Length == 1
 		FRandomStream rand;
@@ -31,6 +31,6 @@ void ATankAIController::Tick(float DeltaTime)
 		FVector target = randVector * 1000 + playerLocation;
 
 		ControlledTank->AimAt(target);
-		//ControlledTank->Fire(); //TODO: Limit Firing rate
+		ControlledTank->Fire(); //TODO: Limit Firing rate
 	}
 }
