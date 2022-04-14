@@ -6,10 +6,10 @@
 void UTankTurret::Rotate(float RelativeSpeed)
 {
 	
-	//TODO: Resolve gimbal lock issue at 180 degrees yaw.
+	// Get relative speed and rotate the turret.
+	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -2, +2);
 	auto RotateChange = RelativeSpeed * MaxDegreesPerSecond * (GetWorld()->DeltaTimeSeconds);
 	auto Rotation = GetRelativeRotation().Yaw + RotateChange;
-	//GetRelativeRotation().Pitch
 
 	SetRelativeRotation(FRotator(0, Rotation, 0));
 

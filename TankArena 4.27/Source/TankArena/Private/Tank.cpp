@@ -8,7 +8,6 @@
 #include "TankMovementComponent.h"
 
 
-// Sets default values (Constructor)
 ATank::ATank()
 {
  	// When bCanEverTick is set to true, this pawn calls Tick() every frame.  You can turn this off to improve performance if you don't need it.
